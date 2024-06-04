@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="dice.png">
+  <title>Ludo </title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+      background-color: aqua;
+    }
+
+    .ludo {
+      width: 600px;
+      height: 604px;
+      border-radius: 70px;
+    }
+
+    .red-home {
+      border-bottom: 2px solid black;
+      border-right: 2px solid black;
+      border-top-left-radius: 70px;
+    }
+
+    .blue-home {
+      border-bottom: 2px solid black;
+      border-left: 2px solid black;
+      border-top-right-radius: 70px;
+    }
+
+    .green-home {
+      border-top: 2px solid black;
+      border-right: 2px solid black;
+      border-bottom-left-radius: 70px;
+    }
+
+    .yellow-home {
+      border-left: 2px solid black;
+      border-top: 2px solid black;
+      border-bottom-right-radius: 70px;
+    }
+
+    .home {
+      width: 240px;
+      height: 240px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .x-boxes {
+      width: 120px;
+      height: 240px;
+      border: 1px solid black;
+      display: grid;
+      grid-template-columns: auto auto auto;
+    }
+
+
+    .y-boxes {
+      width: 240px;
+      height: 120px;
+      border: 1px solid black;
+      display: grid;
+      grid-template-columns: auto auto auto auto auto auto;
+    }
+
+    .box {
+      width: 38.5px;
+      height: 38.5px;
+      border: 1px solid black;
+    }
+
+    .d-flex {
+      display: flex;
+    }
+
+    .win-home {
+      border: 1px solid black;
+      width: 120px;
+      height: 120px;
+    }
+
+    .blue {
+      background-color: blue;
+    }
+
+    .red {
+      background-color: red;
+    }
+
+    .green {
+      background-color: green;
+    }
+
+    .yellow {
+      background-color: yellow;
+    }
+
+    .b-red {
+      border: 4px solid red;
+
+    }
+
+    .b-blue {
+      border: 4px solid blue;
+    }
+
+    .b-green {
+      border: 4px solid green;
+    }
+
+    .b-yellow {
+      border: 4px solid yellow;
+    }
+
+    .radius-50 {
+      border-radius: 50%;
+    }
+
+    .inner {
+      background-color: white;
+      width: 150px;
+      height: 150px;
+      display: flex;
+      flex-wrap: wrap;
+      border-radius: 20px;
+      outline: 4px solid white;
+    }
+
+    .rel {
+      position: relative;
+    }
+
+    .abs {
+      position: absolute;
+    }
+
+
+
+    .circle {
+      width: 50px;
+      height: 50px;
+      margin-left: 20px;
+      margin-top: 10px;
+    }
+
+    .green-win {
+      bottom: 0;
+      width: 0;
+      height: 0;
+      border-left: 60px solid transparent;
+      border-right: 60px solid transparent;
+      border-bottom: 64px solid green;
+    }
+
+    .yellow-win {
+      right: 0;
+      width: 0;
+      height: 0;
+      border-top: 60px solid transparent;
+      border-bottom: 60px solid transparent;
+      border-right: 59px solid yellow;
+    }
+
+    .blue-win {
+      top: 0;
+      width: 0;
+      height: 0;
+      border-top: 60px solid blue;
+      border-left: 57px solid transparent;
+      border-right: 60px solid transparent;
+    }
+
+    .red-win {
+      left: 0;
+      width: 0;
+      height: 0;
+      border-top: 60px solid transparent;
+      border-bottom: 60px solid transparent;
+      border-left: 57px solid red;
+    }
+
+    .blue-down-arrow {
+      top: 15px;
+      left: 5px;
+      width: 0;
+      height: 0;
+      border-top: 15px solid blue;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+    }
+
+    .red-left-arrow {
+      left: 15px;
+      top: 5px;
+      width: 0;
+      height: 0;
+      border-top: 15px solid transparent;
+      border-bottom: 15px solid transparent;
+      border-left: 15px solid red;
+    }
+
+    .yellow-riglt-arrow {
+      right: 15px;
+      top: 5px;
+      width: 0;
+      height: 0;
+      border-top: 15px solid transparent;
+      border-bottom: 15px solid transparent;
+      border-right: 15px solid yellow;
+    }
+
+    .green-up-arrow {
+      bottom: 15px;
+      left: 5px;
+      width: 0;
+      height: 0;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      border-bottom: 15px solid green;
+    }
+
+    button {
+      transition: all 0.5s;
+      font-size: 17px;
+      padding: 1ch 2ch;
+      background-color: white;
+      color: #000;
+      font-family: Roboto, sans-serif;
+      border: none;
+      border-radius: 2px;
+      box-shadow: 2px 2px 0px hsl(0, 0%, 90%),
+        4px 4px 0px hsl(0, 0%, 80%),
+        6px 6px 0px hsl(0, 0%, 70%),
+        8px 8px 0px hsl(0, 0%, 60%),
+        10px 10px 0px hsl(0, 0%, 50%),
+        12px 12px 0px hsl(0, 0%, 40%),
+        14px 14px 0px hsl(0, 0%, 30%),
+        16px 16px 0px hsl(0, 0%, 20%),
+        18px 18px 0px hsl(0, 0%, 10%);
+    }
+
+    button:hover {
+      background-color: hsl(0, 0%, 50%);
+      color: #fff;
+      box-shadow: none;
+    }
+
+    button {
+      margin: 283px 0 0 110px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="ludo">
+    <div class="d-flex ">
+      <div class="red-home red home d-flex">
+        <div class="inner b-red">
+          <div class="red circle radius-50 "> <i class="fa-regular fa-star"></i></div>
+          <div class="red circle radius-50"></div>
+          <div class="red circle radius-50"></div>
+          <div class="red circle radius-50"></div>
+        </div>
+
+      </div>
+      <div class="x-boxes">
+        <div class="box"></div>
+        <div class="box rel">
+          <div class="blue-down-arrow abs"></div>
+        </div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box blue"></div>
+        <div class="box blue"></div>
+        <div class="box blue"></div>
+        <div class="box blue"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box blue"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box blue"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box blue"></div>
+        <div class="box"></div>
+
+      </div>
+      <div class="blue-home blue d-flex home">
+        <div class="inner b-blue ">
+          <div class="blue circle radius-50"></div>
+          <div class="blue circle radius-50"></div>
+          <div class="blue circle radius-50"></div>
+          <div class="blue circle radius-50"></div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="d-flex">
+      <div class="y-boxes">
+        <div class="box"></div>
+        <div class="box red"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box rel">
+          <div class="red-left-arrow abs"></div>
+        </div>
+        <div class="box red"></div>
+        <div class="box red"></div>
+        <div class="box red"></div>
+        <div class="box red"></div>
+        <div class="box red"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box red"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+      </div>
+      <div class="win-home rel ">
+        <div class="green-win abs"></div>
+        <div class="red-win abs"></div>
+        <div class="yellow-win abs"></div>
+        <div class="blue-win abs"></div>
+      </div>
+      <div class="y-boxes">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box yellow"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box yellow"></div>
+        <div class="box yellow"></div>
+        <div class="box yellow"></div>
+        <div class="box yellow"></div>
+        <div class="box yellow"></div>
+        <div class="box rel">
+          <div class="yellow-riglt-arrow abs"></div>
+        </div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box yellow"></div>
+        <div class="box"></div>
+      </div>
+    </div>
+
+    <div class="d-flex">
+      <div class="green-home green d-flex home">
+        <div class="inner b-green">
+          <div class="green circle radius-50"></div>
+          <div class="green circle radius-50"></div>
+          <div class="green circle radius-50"></div>
+          <div class="green circle radius-50"></div>
+        </div>
+      </div>
+      <div class="x-boxes">
+        <div class="box"></div>
+        <div class="box green"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box green"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box green"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box green"></div>
+        <div class="box green"></div>
+        <div class="box green"></div>
+        <div class="box green"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box rel">
+          <div class="green-up-arrow abs"></div>
+        </div>
+        <div class="box"></div>
+      </div>
+      <div class="yellow-home yellow d-flex home">
+        <div class="inner b-yellow ">
+          <div class="yellow circle radius-50"></div>
+          <div class="yellow circle radius-50"></div>
+          <div class="yellow circle radius-50"></div>
+          <div class="yellow circle radius-50"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+  <a href="../Learn_with-Qadeer/index.html"><button>Back</button></a>
+  </div>
+</body>
+
+</html>
