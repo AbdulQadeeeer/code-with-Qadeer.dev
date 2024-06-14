@@ -125,8 +125,17 @@ body {
 .gap-10 {
     gap: 10px;
 }
-h4,h5{
+
+h4,
+h5 {
     margin: 0;
+}
+
+.cta {
+    position: absolute;
+    top: 156px;
+    right: 34px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 p {
@@ -134,13 +143,23 @@ p {
     font-size: 11px;
 }
 
-.hover:hover{
+.hover:hover {
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
-.clr-hover:hover{
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+.mb-10 {
+    margin-bottom: 10px;
+}
+
+.clr-hover:hover {
     color: white;
     background-color: #46BAAB;
 }
+
 .box-a button {
     width: 470px;
     height: 40px;
