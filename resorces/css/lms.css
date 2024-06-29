@@ -9,14 +9,7 @@ body {
     font-family: "Poppins", sans-serif;
     background-color: rgba(127, 255, 212, 0.097);
 }
-@media (max-width:600px){
-.container{
-        flex-direction: column;
-    }
-    .container .sidebar{
-        display: none;
-    }
-}
+
 
 .d-flex {
     display: flex;
@@ -145,7 +138,8 @@ h5 {
     right: 34px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-.w-100{
+
+.w-100 {
     width: 70%;
 }
 
@@ -245,12 +239,9 @@ p {
     margin: 5px 0 0 3px;
 }
 
-.box-a {
-}
+.box-a {}
 
-.box-b {
-
-}
+.box-b {}
 
 .box-c {
     padding: 10px 30px;
