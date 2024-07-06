@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Quiz By Qadeer : )</title>
+</head>
+
+<body>
+    <div class="wrap">
+        <div id="quizContainer">
+            <div id="takeQuizBtn">
+                <button id="htmlQuizButton">Take HTML Quiz</button>
+                <button id="cssQuizButton">Take CSS Quiz</button>
+                <button id="jsQuizButton">Take JS Quiz</button>
+            </div>
+            <div id="questionContainer"></div>
+            <div class="flex">
+                <button id="previousButton" onclick="previousQuestion()">Previous</button>
+                <div id="globalTimer" style="text-align: center;"></div>
+                <button id="startExamButton" style="display:none;">Start Exam</button>
+                <button id="nextButton" onclick="nextQuestion()">Next</button>
+                <button id="resultsButton" onclick="showResults()">Results</button>
+
+            </div>
+
+        </div>
+    </div>
+    <script src="htmlQuestions.js"></script>
+    <script src="cssQuestions.js"></script>
+    <script src="jsQuestions.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

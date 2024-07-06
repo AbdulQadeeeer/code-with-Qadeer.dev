@@ -1,0 +1,136 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#previousButton,
+#nextButton,
+#resultsButton {
+    display: none;
+    /* Initially hide the buttons */
+}
+
+#globalTimer,
+#questionTimer {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+#quizContainer .choices {
+    margin-top: 10px;
+}
+
+
+#startExamButton {
+    background-color: rgba(0, 128, 0, 0.445);
+}
+
+.wrap {
+    padding: 10px;
+    width: auto;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.choices div {
+    margin: 10px 0;
+    border: 3px double rgba(0, 0, 0, 0.551);
+    padding: 5px;
+}
+
+
+.question {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.question-container {
+    padding: 20px;
+    border-radius: 5px;
+    width: auto;
+}
+
+.countdown,
+.global-timer {
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #33333340;
+    color: #fff;
+    margin: 20px 0;
+}
+
+
+
+.choices div:hover {
+    background-color: #0057b376;
+}
+
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.bg-orange {
+    background-color: orange;
+}
+
+.htmlQuiz,
+.cssQuiz,
+.jsQuiz,
+.results {
+    display: none;
+}
+
+#htmlQuizButton,
+#cssQuizButton,
+#jsQuizButton,
+.previous,
+.next {
+    background-color: rgba(0, 0, 0, 0.551);
+    border-top-left-radius: 22px;
+    border-bottom-right-radius: 22px;
+}
+
+button {
+    font-size: 16px;
+    padding: 10px 20px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.time-txt {
+    color: red;
+}
+
+#questionTimer,
+#globalTimer {
+    color: rgba(255, 0, 0, 0.456);
+}
+
+#takeQuizBtn {}
