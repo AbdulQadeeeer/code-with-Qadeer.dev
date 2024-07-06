@@ -98,7 +98,7 @@ function showResults() {
     const questionContainer = document.querySelector('#questionContainer');
     questionContainer.innerHTML = currentQuiz.map((q, index) => `
         <div class="question">
-            Question ${index + 1}: 
+            Question ${index + 0}: 
             <span style="color: ${userAnswers[index] === q.correctAnswer ? 'green' : 'red'}">
                 ${q.choices[userAnswers[index]] || 'No answer selected'}
             </span>

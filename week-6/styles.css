@@ -33,7 +33,8 @@ body {
 }
 
 
-#startExamButton {
+#startExamButton,
+#resultsButton {
     background-color: rgba(0, 128, 0, 0.445);
 }
 
