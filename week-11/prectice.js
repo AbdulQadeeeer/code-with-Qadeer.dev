@@ -1,0 +1,1 @@
+//find a number that is less then 100 

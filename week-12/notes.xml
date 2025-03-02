@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<university>
+
+    <name>
+        Virtual university
+    </name>
+
+    <location>
+         lahore, Pakistan
+    </location>
+
+    <departments>
+
+        <department>
+
+            <name>
+                Mathecmatics 
+            </name>
+
+            <head>
+                Abdul Jamil 
+            </head>
+
+            <courses>
+
+                <course>
+                    <code>
+                        mth202
+                    </code>
+                    <title>
+                        Discrete Mathecmatics
+                    </title>
+                    <credits>
+                        3
+                    </credits>
+                </course>
+
+                <course>
+                    <code>
+                        mth100
+                    </code>
+                    <title>
+                        General math
+                    </title>
+                    <credits>
+                        2
+                    </credits>
+                </course>
+
+            </courses>
+
+            <students>
+
+                <student>
+                    <id>
+                       Bc210425140
+                    </id>
+                    <name>
+                         Adnan Ahmad
+                    </name>
+                    <major>
+                        Mathecmatics 
+                    </major>
+                    <enrollment_year>
+                        2022
+                    </enrollment_year>
+                </student>
+
+                <student>
+                    <id>
+                        BC023465987
+                    </id>
+                    <name>
+                        babar ali
+                    </name>
+                    <major>
+                        math Science
+                    </major>
+                    <enrollment_year>
+                        2018
+                    </enrollment_year>
+                </student>
+
+            </students>
+
+            <faculty>
+
+                <faculty_member>
+                    <id>
+                        2191AB
+                    </id>
+                    <name>
+                        Dr. jabar
+                    </name>
+                    <department>
+                        Mathecmatics 
+                    </department>
+                    <position>
+                        Professor
+                    </position>
+                </faculty_member>
+
+            </faculty>
+
+        </department>
+    </departments>
+
+</university>
